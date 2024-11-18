@@ -3,6 +3,7 @@
 //1. por cada input, select, textarea del formularion se crea una variable
 
 //2. por cada variable debo utilizar el DOM para asociasar el html con js
+
 let nombrePaciente = document.getElementById("nombrePaciente")
 let correoPaciente = document.getElementById("correoPaciente")
 let telefonoPaciente = document.getElementById("telefonoPaciente")
@@ -42,3 +43,6 @@ botonRegistroPaciente.addEventListener("click", function(evento) {
         icon: "success"
     });
 })
+
+
+
