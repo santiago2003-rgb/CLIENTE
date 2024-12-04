@@ -1,33 +1,11 @@
-let signosVitales = [
-    {
-        id: 1,
-        nombre: "Frecuencia Cardíaca",
-        valor: "72 bpm",
-        fechaMedida: "2024-11-12"
-    },
-    {
-        id: 2,
-        nombre: "Presión Arterial",
-        valor: "120/80 mmHg",
-        fechaMedida: "2024-11-11"
-    },
-    {
-        id: 3,
-        nombre: "Temperatura Corporal",
-        valor: "36.7°C",
-        fechaMedida: "2024-11-10"
-    },
-    {
-        id: 4,
-        nombre: "Frecuencia Respiratoria",
-        valor: "16 respiraciones por minuto",
-        fechaMedida: "2024-11-09"
-    }
-]
+import { buscarSignoVital } from "../../services/serviciosSignoVital.js"
 
-let fila = document.getElementById("fila")
+buscarSignoVital()
+.then(function(respuestaBack){
+    console.log(respuestaBack)
+    let fila = document.getElementById("fila")
 
-signosVitales.forEach(function(signoVital){
+    respuestaBack.forEach(function(signoVital){
     console.log(signoVital)
     let columna = document.createElement("div")
     columna.classList.add("col")
@@ -41,4 +19,5 @@ signosVitales.forEach(function(signoVital){
     tarjeta.appendChild(nombre)
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
+})
 })
